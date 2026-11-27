@@ -10,7 +10,8 @@
 const fs = require("node:fs");
 const path = require("node:path");
 
-const SRC = path.join(process.cwd(), "entry.png");
+const SCRIPT_DIR = typeof __dirname !== "undefined" ? __dirname : path.dirname(process.argv[1]);
+const SRC = path.join(SCRIPT_DIR, "entry.png");
 const OUT_DIR = process.env.MAKEFUN_OUTPUT_DIR || "/output";
 const OUT = path.join(OUT_DIR, "entry.png");
 
